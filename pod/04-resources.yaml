@@ -4,7 +4,7 @@ metadata:
   name: stress
 spec:
   containers:
-    - image: revanthsatyam/stress
+    - image: revanthsatyam/stress:v1
       imagePullPolicy: Always
       name: stress
       command: ["sleep","200"]
