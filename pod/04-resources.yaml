@@ -3,8 +3,8 @@ kind: Pod
 metadata:
   name: stress
 spec:
-  - containers:
-      - image: revanthsatyam/stress
-        name: stress
-        imagePullPolicy: Always
-        command: ["sleep","200"]
+  containers:
+    - image: revanthsatyam/stress
+      name: stress
+      imagePullPolicy: Always
+      command: ["sleep","200"]
