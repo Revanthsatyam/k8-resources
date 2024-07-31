@@ -4,7 +4,14 @@ metadata:
   name: stress
 spec:
   containers:
-    - image: revanthsatyam/stress:v1
-      name: stress
+    - image: revanthsatyam/stress
       imagePullPolicy: Always
+      name: stress
       command: ["sleep","200"]
+      resources:
+        requests: # minimum resource utilization
+          memory: "64Mi"
+          cpu: "250m" #1cpu=1000m
+        limits: # maximum resource utilization
+          memory: "128Mi"
+          cpu: "500m"
