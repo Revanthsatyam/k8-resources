@@ -3,10 +3,10 @@ kind: Pod
 metadata:
   name: simple-webapp
   labels:
-    name: app
+    name: webapp
 spec:
   containers:
-    - name: web-application
+    - name: main-application
       image: nginx
       volumeMounts:
         - name: shared-logs
