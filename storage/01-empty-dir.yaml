@@ -9,14 +9,14 @@ spec:
     - name: nginx
       image: nginx
       volumeMounts:
-        - name: shared-volume
+        - name: shared-logs
           mountPath: /var/log/nginx
     - name: sidecar-container
       image: busybox
       command: ["sh","-c","while true; do cat /var/log/nginx/access.log; sleep 30; done"]
       volumeMounts:
-        - name: shared-volume
+        - name: shared-logs
           mountPath: /var/log/nginx
   volumes:
-    - name: shared-volume
+    - name: shared-logs
       emptyDir: {}
