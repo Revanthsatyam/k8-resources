@@ -16,7 +16,7 @@ spec:
       command: ["sh","-c","while true; do cat /var/log/nginx/access.log; sleep 30; done"]
       volumeMounts:
         - name: shared-logs
-          mountPaths: /var/log/nginx
+          mountPath: /var/log/nginx
   volumes:
     - name: shared-logs
       emptyDir: {}
