@@ -9,10 +9,15 @@ data:
   mapUsers: |
     - userarn: arn:aws:iam::058264090525:user/roboshop-admin
       username: roboshop-admin
+    - userarn: arn:aws:iam::058264090525:user/ramesh
+      username: ramesh
 kind: ConfigMap
 metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"v1","data":{"mapRoles":"- groups:\n  - system:bootstrappers\n  - system:nodes\n  rolearn: arn:aws:iam::058264090525:role/eksctl-spot-cluster-nodegroup-spot-NodeInstanceRole-fYLFKrIvWSxi\n  username: system:node:{{EC2PrivateDNSName}}\n","mapUsers":"- userarn: arn:aws:iam::058264090525:user/roboshop-admin\n  username: roboshop-admin\n"},"kind":"ConfigMap","metadata":{"annotations":{},"creationTimestamp":"2024-08-12T08:51:53Z","name":"aws-auth","namespace":"kube-system","resourceVersion":"1371","uid":"9967a231-56d1-40fe-901d-12188a47f57e"}}
   creationTimestamp: "2024-08-12T08:51:53Z"
   name: aws-auth
   namespace: kube-system
-  resourceVersion: "1371"
+  resourceVersion: "10872"
   uid: 9967a231-56d1-40fe-901d-12188a47f57e
